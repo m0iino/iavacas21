@@ -5,9 +5,11 @@ function reflex_agent(location, state){
     else if (location=="B") return "LEFT";
 }
 var count = 0;
+var count2 = 0;
 function test(states){
       count = count + 1;
-      console.log(count);
+      count2 = count2 + 1;
+      //console.log(count);
        var location = states[0];		
        var state = states[0] == "A" ? states[1] : states[2];
        var action_result = reflex_agent(location, state);
@@ -37,8 +39,11 @@ function test(states){
         states[0] = "A";	
         	
        } 
-       
- setTimeout(function(){ test(states); }, 2000);
+       if(count2 == 8){
+        
+      }else {
+        setTimeout(function(){ test(states); }, 2000);
+      }
 }
 
 var states = ["A","DIRTY","DIRTY"];
